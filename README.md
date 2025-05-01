@@ -5,3 +5,4 @@ Create separate folders for exercises. Each exercise should not depend on any fo
 Update the list of exercise and folders below.
 
 Exercise /folder
+Coursera Intro to CSS /mod2-solution
