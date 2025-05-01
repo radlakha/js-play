@@ -2,3 +2,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
+@media (min-width: 992px) {
+    .desktop-layout {
+        float: left;
+        width: 33.33%; /* Each section takes up one-third of the width */
+        box-sizing: border-box; /* Ensures padding and borders are included in the width */
+        padding: 10px; /* Optional: Add some padding for spacing */
+    }
+}
