@@ -11,3 +11,18 @@ body {
         padding: 10px; /* Optional: Add some padding for spacing */
     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .tablet-layout {
+        float: left;
+        width: 50%; /* First two sections take up half the width each */
+        box-sizing: border-box;
+        padding: 10px;
+        color:brown
+    }
+
+    .tablet-layout.desserts {
+        width: 100%; /* Third section takes up the full width */
+        color: aqua;
+    }
+}
