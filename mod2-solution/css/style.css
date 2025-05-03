@@ -12,10 +12,10 @@ body {
 @media (min-width: 992px) {
     .desktop-layout {
         float: left;
-        width: 33%; /* Each section takes up one-third of the width */
+        width: 33.33%; /* Each section takes up one-third of the width */
         box-sizing: border-box; /* Ensures padding and borders are included in the width */
         position: relative; /* Set the section as the positioning context */
-        margin: .1%; /* Add spacing between sections (horizontal and vertical) */
+        margin: 0px; /* Add spacing between sections (horizontal and vertical) */
         padding: 20px; /* Inner spacing within the section */
         border: 1px solid #ddd; /* Add a border for better visibility */
     }
@@ -24,26 +24,26 @@ body {
 @media (min-width: 768px) and (max-width: 991px) {
     .tablet-layout {
         float: left;
-        width: 47%; /* First two sections take up half the width each */
+        width: 50%; /* First two sections take up half the width each */
         box-sizing: border-box;
         position: relative; /* Set the section as the positioning context */
-        margin: 0.1px; /* Add spacing between sections (horizontal and vertical) */
+        margin: 0px; /* Add spacing between sections (horizontal and vertical) */
         padding: 20px; /* Inner spacing within the section */
         border: 1px solid #ddd; /* Add a border for better visibility */
     }
 
     .tablet-layout.desserts {
-        width: 94%; /* Third section takes up the full width */
+        width: 100%; /* Third section takes up the full width */
     }
 }
 
 @media (max-width: 767px) {
     .mobile-layout {
         position: relative; /* Set the section as the positioning context */
-        margin: 0.1px; /* Add spacing between sections (horizontal and vertical) */
+        margin: 0px; /* Add spacing between sections (horizontal and vertical) */
         padding: 20px; /* Inner spacing within the section */
         float: none; /* Remove floating */
-        width: 99%; /* Each section takes up the full width */
+        width: 100%; /* Each section takes up the full width */
         box-sizing: border-box;
         border: 1px solid #ddd; /* Add a border for better visibility */
     }
@@ -101,4 +101,12 @@ h1 {
     font-size: 1.75em; /* 75% larger than the dummy text (1em * 1.75) */
     margin: 1.25em 0; /* Add spacing above and below the heading */
     text-align: center; /* Center the heading */
+}
+div {
+    position:absolute;
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 1em; /* Add inner spacing around the container */
+    background-color: #f5f5f5; /* Optional: Light background color for the container */
+    border-radius: 0.5em; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
