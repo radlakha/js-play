@@ -91,7 +91,7 @@ section {
         margin: 0.1px; /* Add spacing between sections (horizontal and vertical) */
         padding: 20px; /* Inner spacing within the section */
         float: none; /* Remove floating */
-        width: 100%; /* Each section takes up the full width */
+        width: 99%; /* Each section takes up the full width */
         box-sizing: border-box;
         border: 1px solid #ddd; /* Add a border for better visibility */
     }
@@ -100,16 +100,40 @@ section {
 /* New styles for section titles */
 section {
     position: relative; /* Set the section as the positioning context */
-    margin: 15px; /* Add spacing between sections (horizontal and vertical) */
+    /* margin: 15px; Add spacing between sections (horizontal and vertical) */
     padding: 20px; /* Inner spacing within the section */
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    background-color: rgba(0, 0, 0, 0.3)
 }
 
-.section-title {
+.section-title-red {
     position: absolute; /* Position the title relative to the section */
     top: 10px; /* Offset from the top */
     right: 10px; /* Offset from the right */
     margin: 0; /* Remove default margin */
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    background-color: rgba(255, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    color: white; /* Optional: Set text color to white for contrast */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    font-size: 1.2em; /* Adjust font size */
+}
+.section-title-green {
+    position: absolute; /* Position the title relative to the section */
+    top: 10px; /* Offset from the top */
+    right: 10px; /* Offset from the right */
+    margin: 0; /* Remove default margin */
+    background-color: rgba(0, 255, 0, 0.7); /* Optional: Add a semi-transparent background */
+    color: white; /* Optional: Set text color to white for contrast */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    font-size: 1.2em; /* Adjust font size */
+}
+.section-title-blue {
+    position: absolute; /* Position the title relative to the section */
+    top: 10px; /* Offset from the top */
+    right: 10px; /* Offset from the right */
+    margin: 0; /* Remove default margin */
+    background-color: rgba(0, 0, 255, 0.7); /* Optional: Add a semi-transparent background */
     color: white; /* Optional: Set text color to white for contrast */
     padding: 5px 10px; /* Optional: Add padding for better appearance */
     border-radius: 5px; /* Optional: Add rounded corners */
