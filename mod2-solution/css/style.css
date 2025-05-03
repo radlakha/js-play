@@ -1,3 +1,8 @@
+/* Apply box-sizing to all elements and pseudo-elements */
+* {
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's dimensions */
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,7 +12,6 @@ body {
     .desktop-layout {
         float: left;
         width: 33.33%; /* Each section takes up one-third of the width */
-        box-sizing: border-box; /* Ensures padding and borders are included in the width */
         padding: 10px; /* Optional: Add some padding for spacing */
     }
 }
@@ -16,7 +20,6 @@ body {
     .tablet-layout {
         float: left;
         width: 50%; /* First two sections take up half the width each */
-        box-sizing: border-box;
         padding: 10px;
     }
 
@@ -29,7 +32,6 @@ body {
     .mobile-layout {
         float: none; /* Remove floating */
         width: 100%; /* Each section takes up the full width */
-        box-sizing: border-box;
         padding: 10px;
     }
 }
@@ -37,6 +39,7 @@ body {
 /* New styles for section titles */
 section {
     position: relative; /* Set the section as the positioning context */
+    
 }
 
 .section-title {
@@ -49,4 +52,70 @@ section {
     padding: 5px 10px; /* Optional: Add padding for better appearance */
     border-radius: 5px; /* Optional: Add rounded corners */
     font-size: 1.2em; /* Adjust font size */
+}body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+@media (min-width: 992px) {
+    .desktop-layout {
+        float: left;
+        width: 33%; /* Each section takes up one-third of the width */
+        box-sizing: border-box; /* Ensures padding and borders are included in the width */
+        position: relative; /* Set the section as the positioning context */
+        margin: .1%; /* Add spacing between sections (horizontal and vertical) */
+        padding: 20px; /* Inner spacing within the section */
+        border: 1px solid #ddd; /* Add a border for better visibility */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .tablet-layout {
+        float: left;
+        width: 47%; /* First two sections take up half the width each */
+        box-sizing: border-box;
+        position: relative; /* Set the section as the positioning context */
+        margin: 0.1px; /* Add spacing between sections (horizontal and vertical) */
+        padding: 20px; /* Inner spacing within the section */
+        border: 1px solid #ddd; /* Add a border for better visibility */
+    }
+
+    .tablet-layout.desserts {
+        width: 94%; /* Third section takes up the full width */
+    }
+}
+
+@media (max-width: 767px) {
+    .mobile-layout {
+        position: relative; /* Set the section as the positioning context */
+        margin: 0.1px; /* Add spacing between sections (horizontal and vertical) */
+        padding: 20px; /* Inner spacing within the section */
+        float: none; /* Remove floating */
+        width: 100%; /* Each section takes up the full width */
+        box-sizing: border-box;
+        border: 1px solid #ddd; /* Add a border for better visibility */
+    }
+}
+
+/* New styles for section titles */
+section {
+    position: relative; /* Set the section as the positioning context */
+    margin: 15px; /* Add spacing between sections (horizontal and vertical) */
+    padding: 20px; /* Inner spacing within the section */
+}
+
+.section-title {
+    position: absolute; /* Position the title relative to the section */
+    top: 10px; /* Offset from the top */
+    right: 10px; /* Offset from the right */
+    margin: 0; /* Remove default margin */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    color: white; /* Optional: Set text color to white for contrast */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    font-size: 1.2em; /* Adjust font size */
+}
+
+p {
+    padding: 40px;
 }
