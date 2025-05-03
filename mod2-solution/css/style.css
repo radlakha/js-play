@@ -18,12 +18,10 @@ body {
         width: 50%; /* First two sections take up half the width each */
         box-sizing: border-box;
         padding: 10px;
-        color: brown;
     }
 
     .tablet-layout.desserts {
         width: 100%; /* Third section takes up the full width */
-        color: aqua;
     }
 }
 
@@ -34,4 +32,21 @@ body {
         box-sizing: border-box;
         padding: 10px;
     }
+}
+
+/* New styles for section titles */
+section {
+    position: relative; /* Set the section as the positioning context */
+}
+
+.section-title {
+    position: absolute; /* Position the title relative to the section */
+    top: 10px; /* Offset from the top */
+    right: 10px; /* Offset from the right */
+    margin: 0; /* Remove default margin */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    color: white; /* Optional: Set text color to white for contrast */
+    padding: 5px 10px; /* Optional: Add padding for better appearance */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    font-size: 1.2em; /* Adjust font size */
 }
