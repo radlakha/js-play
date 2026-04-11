@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                    // Output JavaScript version (modern JS)
+    "module": "commonjs",                  // Module system used by Node.js
+    "outDir": "./dist",                    // Where compiled .js files go
+    "rootDir": "./src",                    // Where your source .ts files are
+
+    "strict": true,                        // Enables all strict type-checking (recommended)
+    
+    "esModuleInterop": true,               // Makes importing CommonJS modules easier
+    "skipLibCheck": true,                  // Skips type checking of declaration files (faster)
+    
+    "types": ["node", "jest"],              // ← Very important
+                                           // Tells TypeScript which global types to include
+                                           // "node" → allows process, console, etc.
+                                           // "jest" → allows describe, test, expect, etc.
+
+    "forceConsistentCasingInFileNames": true   // Prevents Windows/Linux case issues
+  },
+
+  "include": ["src/**/*", "tests/**/*"],     // Which folders/files TypeScript should process
+  "exclude": ["node_modules", "dist"]        // Folders to ignore
+}

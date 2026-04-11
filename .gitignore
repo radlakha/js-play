@@ -1,2 +1,24 @@
 .vscode/settings.json
 .DS_Store
+
+# Node.js dependencies
+node_modules/
+# Build output
+dist/
+build/
+# TypeScript declaration files
+*.d.ts
+# Logs and temporary files
+*.log
+*.tmp
+# Editor-specific settings
+vscode/
+.vscode/
+idea/
+# Environment variables
+env
+# Coverage reports
+coverage/
+# Lock files
+package-lock.json
+yarn.lock
