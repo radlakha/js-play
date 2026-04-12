@@ -22,3 +22,7 @@ coverage/
 # Lock files
 package-lock.json
 yarn.lock
+# Claude
+.claude/settings.local.json
+.claude/projects/
+.claude/worktrees/

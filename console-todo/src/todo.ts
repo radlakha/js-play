@@ -1,41 +1,53 @@
 // src/todo.ts
 
-// ==================== PURE FUNCTIONS ====================
+// ==================== TYPES ====================
 
-export function addTask(currentTasks: string[], newTask: string): string[] {
-    return [...currentTasks, newTask];
+export interface Task {
+    id: number;
+    title: string;
+    completed: boolean;
+    createdAt: Date;
 }
 
-export function markTaskComplete(currentTasks: string[], index: number): string[] {
+export type TaskList = Task[];
+
+// ==================== PURE FUNCTIONS ====================
+
+export function addTask(currentTasks: Task[], newTask: string): Task[] {
+    const task: Task = {
+        id: currentTasks.length,
+        title: newTask,
+        completed: false,
+        createdAt: new Date()
+    };
+    return [...currentTasks, task];
+}
+
+export function markTaskComplete(currentTasks: Task[], index: number): Task[] {
     return currentTasks.map((task, i) =>
-        i === index ? "[✓] " + task : task
+        i === index ? { ...task, completed: true } : task
     );
 }
 
 // New pure function: toggles completion status of a task
-export function toggleTaskCompletion(currentTasks: string[], index: number): string[] {
-    return currentTasks.map((task, i) => {
-        if (i === index) {
-            if (task.startsWith("[✓] ")) {
-                return task.slice(4);           // remove "[✓] "
-            } else {
-                return "[✓] " + task;
-            }
-        }
-        return task;
-    });
+export function toggleTaskCompletion(currentTasks: Task[], index: number): Task[] {
+    return currentTasks.map((task, i) =>
+        i === index ? { ...task, completed: !task.completed } : task
+    );
 }
 
-export function getTasksDisplay(tasks: string[]): string[] {
+export function getTasksDisplay(tasks: Task[]): string[] {
     if (tasks.length === 0) {
         return ["No tasks yet. Add some!"];
     }
-    return tasks.map((task, index) => `${index + 1}. ${task}`);
+    return tasks.map(({ title, completed }, index) =>
+        `${index + 1}. ${completed ? "[✓] " : ""}${title}`
+    );
 }
 
 // ==================== APPLICATION API ====================
 
-let appTasks: string[] = [];
+let appTasks: Task[] = [];
 
 export function createTask(title: string): number {
     appTasks = addTask(appTasks, title);
@@ -47,7 +59,7 @@ export function toggleTask(id: number): void {
 }
 
 export function isTaskComplete(id: number): boolean {
-    return appTasks[id].startsWith("[✓] ");
+    return appTasks[id].completed;
 }
 
 export function resetApp(): void {
@@ -66,8 +78,8 @@ function showMenu(): void {
     console.log("Enter your choice (1-4): ");
 }
 
-function handleChoice(currentTasks: string[], choice: string):
-    { tasks: string[], action: "continue" | "exit" | "awaiting_toggle" | "awaiting_add" }
+function handleChoice(currentTasks: Task[], choice: string):
+    { tasks: Task[], action: "continue" | "exit" | "awaiting_toggle" | "awaiting_add" }
 {
     switch (choice) {
         case "1":
@@ -99,7 +111,7 @@ function handleChoice(currentTasks: string[], choice: string):
 
 export function startCli(): void {
     console.log("Welcome to Console Todo Manager!");
-    let tasks: string[] = [];
+    let tasks: Task[] = [];
     let mode: "menu" | "toggle" | "add" = "menu";
 
     showMenu();
