@@ -1,0 +1,204 @@
+/* ============================================================
+   Coder's Field Guide :: Functional TypeScript
+   Anki Card Stylesheet
+
+   HOW TO APPLY:
+   1. In Anki, click Browse → select any card from this deck
+   2. Click Cards... (top of the editor)
+   3. Replace the entire Styling section with this CSS
+   4. Click Close — all cards update immediately
+   ============================================================ */
+
+/* ── Base ───────────────────────────────────────────────── */
+.card {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  font-size: clamp(14px, 2.5vw, 17px);
+  line-height: 1.65;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 32px) clamp(16px, 4vw, 28px);
+  color: #1c1e26;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Question text ──────────────────────────────────────── */
+.q {
+  font-size: clamp(15px, 2.8vw, 18px);
+  font-weight: 600;
+  color: #1c1e26;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* ── Inline code ────────────────────────────────────────── */
+code {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: 0.88em;
+  background: #eef0f5;
+  color: #d1383d;
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: 1px solid #e0e3ea;
+}
+
+/* ── Code blocks ────────────────────────────────────────── */
+pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: 10px;
+  padding: clamp(12px, 2.5vw, 18px) clamp(14px, 3vw, 20px);
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: clamp(12px, 1.8vw, 13.5px);
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: 14px 0 18px 0;
+  border-left: 3px solid #89b4fa;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* ── Answer options ─────────────────────────────────────── */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: clamp(9px, 1.8vw, 12px) clamp(12px, 2.5vw, 16px);
+  background: #f6f7fb;
+  border-radius: 9px;
+  border: 1.5px solid #e4e7f0;
+  font-size: clamp(13.5px, 2.2vw, 16px);
+  line-height: 1.5;
+}
+
+.opt-label {
+  font-weight: 700;
+  color: #4361ee;
+  min-width: 22px;
+  flex-shrink: 0;
+  font-size: 0.95em;
+}
+
+/* ── Back: MCQ answer ───────────────────────────────────── */
+.answer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #e8f5e9;
+  border: 2px solid #43a047;
+  color: #1b5e20;
+  font-size: clamp(15px, 3vw, 19px);
+  font-weight: 700;
+  padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 22px);
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.answer::before {
+  content: "✓";
+  font-size: 1.15em;
+  opacity: 0.85;
+}
+
+/* ── Concept card label ─────────────────────────────────── */
+.concept-label {
+  display: inline-block;
+  background: #fff8e1;
+  border: 1.5px solid #ffc107;
+  color: #7a5800;
+  font-size: 0.72em;
+  font-weight: 800;
+  padding: 3px 11px 2px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ── Concept card back ──────────────────────────────────── */
+.concept-answer {
+  background: #f8f9fc;
+  border-radius: 10px;
+  padding: clamp(14px, 2.5vw, 22px) clamp(16px, 3vw, 24px);
+  border-left: 4px solid #4361ee;
+  font-size: clamp(13.5px, 2.2vw, 16px);
+  line-height: 1.7;
+}
+
+.concept-answer b {
+  color: #2f44cc;
+}
+
+.concept-answer pre {
+  margin: 12px 0;
+  font-size: clamp(11.5px, 1.7vw, 13px);
+}
+
+/* ── Night mode ─────────────────────────────────────────── */
+.nightMode .card {
+  background: #1e1e2e;
+  color: #cdd6f4;
+}
+
+.nightMode code {
+  background: #313244;
+  color: #f38ba8;
+  border-color: #45475a;
+}
+
+.nightMode pre {
+  background: #11111b;
+  border-left-color: #89b4fa;
+}
+
+.nightMode .q {
+  color: #cdd6f4;
+}
+
+.nightMode .option {
+  background: #2a2a3e;
+  border-color: #45475a;
+  color: #cdd6f4;
+}
+
+.nightMode .opt-label {
+  color: #89b4fa;
+}
+
+.nightMode .answer {
+  background: #1a2e1a;
+  border-color: #a6e3a1;
+  color: #a6e3a1;
+}
+
+.nightMode .concept-label {
+  background: #3a3020;
+  border-color: #f9e2af;
+  color: #f9e2af;
+}
+
+.nightMode .concept-answer {
+  background: #252535;
+  border-left-color: #89b4fa;
+  color: #cdd6f4;
+}
+
+.nightMode .concept-answer b {
+  color: #89b4fa;
+}
